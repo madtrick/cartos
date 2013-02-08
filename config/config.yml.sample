@@ -1,0 +1,9 @@
+config :
+  google_spreadsheet :
+    key :
+    username :
+    password :
+  cashbasehq :
+    account_name :
+    username :
+    password :
