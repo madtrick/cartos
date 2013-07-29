@@ -9,7 +9,7 @@ task :load, :filename do |t, args|
               Cartos.load_from_cashbase
             end
   entries.filter_by_year 2011
-  sheet = Cartos::Spreadsheet::CartosSpreadsheet.new Cartos.config.google_spreadsheet.key
-  sheet.monthly entries
-  sheet.summary entries
+  spread_sheet = Cartos::Spreadsheet::CartosSpreadsheet.new Cartos.config.google_spreadsheet.key
+  spread_sheet.monthly entries
+  spread_sheet.summary entries
 end
