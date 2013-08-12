@@ -17,7 +17,6 @@ module Cartos
       end
 
       def push_entry(date, amount, description, category)
-        puts "#{date} #{amount} #{description} #{category}"
         push_row DATE, date
         push_row AMOUNT, amount
         push_row DESCRIPTION, description
@@ -26,8 +25,8 @@ module Cartos
 
       def push_category(category)
         push_row CATEGORIES, category
-        formula = Cartos::Google::Sheet::Formulas.new
-        entry_range = @sheet.row_range(AMOUNT, 1, @sheet.last_row(AMOUNT))
+        formula        = Cartos::Google::Sheet::Formulas.new
+        entry_range    = @sheet.row_range(AMOUNT, 1, @sheet.last_row(AMOUNT))
         category_range = @sheet.row_range(CATEGORY, 1, @sheet.last_row(CATEGORY))
         push_row EXPENDINGS_BY_CATEGORY, formula.sum.filter(entry_range, "#{category_range} = \"#{category}\"")
       end
@@ -40,7 +39,6 @@ module Cartos
       end
 
       def push_row(column, value)
-        #puts "pushing #{column} #{value}"
         @sheet.push_row column, value
       end
 

@@ -7,7 +7,6 @@ module Cartos
         @filename = filename
       end
       def import
-        puts "Importing data from file #{@filename}"
         file = ::File.open @filename
         file.read
       end

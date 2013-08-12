@@ -49,7 +49,6 @@ module Cartos
 
       def push_row(column, value)
         column_number = ensure_column_as_number column
-        puts "#{self.last_row column} #{column_number} #{value.inspect}"
         result = set_row (self.last_row column), column_number, value
         result
       end

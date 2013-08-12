@@ -20,7 +20,6 @@ module Cartos
         totals["earnings"] = {}
         totals["total"] = {}
         entries.each_month do |month, entries|
-          puts "Month #{month}"
           totals["expendings"][month] = 0
           totals["earnings"][month] = 0
           entries.each do |entry|
@@ -29,13 +28,10 @@ module Cartos
           totals["total"][month] = totals["earnings"][month] + totals["expendings"][month]
           totals["expendings"][month] = totals["expendings"][month]
           entries.each_category do |category, elements|
-            puts "Category #{category}"
             categories[category] ||= {}
             categories[category][month] = elements.inject(0) {|total, element| total += element.amount}
           end
         end
-        puts categories
-        puts totals
         summary_sheet.push_categories categories
         summary_sheet.push_totals totals
         summary_sheet.save
