@@ -27,11 +27,11 @@ module Cartos
             entry.amount < 0 ? totals["expendings"][month] += entry.amount : totals["earnings"][month] += entry.amount
           end
           totals["total"][month] = totals["earnings"][month] + totals["expendings"][month]
-          totals["expendings"][month] = totals["expendings"][month].abs
+          totals["expendings"][month] = totals["expendings"][month]
           entries.each_category do |category, elements|
             puts "Category #{category}"
             categories[category] ||= {}
-            categories[category][month] = elements.inject(0) {|total, element| total += element.amount}.abs
+            categories[category][month] = elements.inject(0) {|total, element| total += element.amount}
           end
         end
         puts categories
@@ -60,7 +60,7 @@ module Cartos
               expendings_total += entry.amount
             end
           end
-          month_sheet.push_summary expendings_total.abs, earnings_total
+          month_sheet.push_summary expendings_total, earnings_total
 
           month_sheet.save
         end

@@ -29,7 +29,7 @@ module Cartos
         formula = Cartos::Google::Sheet::Formulas.new
         entry_range = @sheet.row_range(AMOUNT, 1, @sheet.last_row(AMOUNT))
         category_range = @sheet.row_range(CATEGORY, 1, @sheet.last_row(CATEGORY))
-        push_row EXPENDINGS_BY_CATEGORY, formula.abs.sum.filter(entry_range, "#{category_range} = \"#{category}\"")
+        push_row EXPENDINGS_BY_CATEGORY, formula.sum.filter(entry_range, "#{category_range} = \"#{category}\"")
       end
 
       def push_summary(expendings_total, earnings_total)
