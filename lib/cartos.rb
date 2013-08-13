@@ -7,11 +7,10 @@ Logging.logger.root.appenders = Logging.appenders.stdout
 Logging.logger.root.level     = :info
 
 module Cartos
-  autoload :Cashbase    , "lib/cashbase"
-  autoload :Import      , "lib/import/import"
-  autoload :Google      , "lib/google/google"
-  autoload :Spreadsheet , "lib/spreadsheet/spreadsheet"
-  autoload :Importer    , "lib/importer"
+  autoload :Cashbase    , "cartos/cashbase"
+  autoload :Import      , "cartos/import/import"
+  autoload :Google      , "cartos/google/google"
+  autoload :Spreadsheet , "cartos/spreadsheet/spreadsheet"
 
   def self.config=(config)
     @config = config
@@ -32,6 +31,6 @@ module Cartos
     Cartos::Cashbase.load
   end
 
-  self.config = SugarfreeConfig.init env: 'config', file: File.expand_path("config/config.yml"), reload: false
+  self.config = SugarfreeConfig.init env: 'config', file: File.expand_path("~/.cartos.yml"), reload: false
 end
 
