@@ -1,10 +1,16 @@
 require "sugarfree-config"
+require "logging"
+
+include Logging.globally
+Logging.logger.root.appenders = Logging.appenders.stdout
+Logging.logger.root.level     = :info
+
 module Cartos
-  autoload :Cashbase, "lib/cashbase"
-  autoload :Import, "lib/import/import"
-  autoload :Google, "lib/google/google"
-  autoload :Spreadsheet, "lib/spreadsheet/spreadsheet"
-  autoload :Importer, "lib/importer"
+  autoload :Cashbase    , "lib/cashbase"
+  autoload :Import      , "lib/import/import"
+  autoload :Google      , "lib/google/google"
+  autoload :Spreadsheet , "lib/spreadsheet/spreadsheet"
+  autoload :Importer    , "lib/importer"
 
   def self.config=(config)
     @config = config

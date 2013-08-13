@@ -3,6 +3,7 @@ module Cartos
     class CartosSpreadsheet
       def initialize(spreeadsheet_key)
         @spreadsheet =  Cartos::Google::Spreadsheet.new spreeadsheet_key
+        logger.info "Exporting data to #{@spreadsheet.url}"
       end
 
 

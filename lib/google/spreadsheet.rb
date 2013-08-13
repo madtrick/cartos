@@ -15,6 +15,10 @@ module Cartos
         worksheet = @spreadsheet.add_worksheet name
         Cartos::Google::Sheet.new worksheet
       end
+
+      def url
+        @spreadsheet.human_url
+      end
     end
   end
 end
