@@ -1,5 +1,6 @@
 require "sugarfree-config"
 require "logging"
+require "cartos/version"
 
 include Logging.globally
 Logging.logger.root.appenders = Logging.appenders.stdout
