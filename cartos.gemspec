@@ -7,9 +7,11 @@ Gem::Specification.new do |spec|
   spec.name          = "cartos"
   spec.version       = Cartos::VERSION
   spec.authors       = ["Farruco Sanjurjo"]
-  spec.email         = ["TODO: Write your email address"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.email         = ["farruco.sanjurjo@gmail.com"]
+  spec.description   = <<-EOF
+    Cartos is litle gem for loading into Google Spreadsheet data exported from Cashbase (https://www.cashbasehq.com/) for further analysis
+    EOF
+  spec.summary       = %q{Load Cashbase exports into Google Spreadsheet}
   spec.homepage      = ""
   spec.license       = "MIT"
 
