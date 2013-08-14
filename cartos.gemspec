@@ -13,7 +13,7 @@ Gem::Specification.new do |spec|
     EOF
   spec.summary       = %q{Load Cashbase exports into Google Spreadsheet}
   spec.homepage      = ""
-  spec.license       = "MIT"
+  spec.license       = "APACHE 2"
 
   spec.files         = `git ls-files`.split($/)
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
