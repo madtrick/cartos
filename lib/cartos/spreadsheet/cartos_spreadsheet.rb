@@ -20,15 +20,15 @@ module Cartos
         totals["expendings"] = {}
         totals["earnings"] = {}
         totals["total"] = {}
-        entries.each_month do |month, entries|
+        entries.each_month do |month, month_entries|
           totals["expendings"][month] = 0
           totals["earnings"][month] = 0
-          entries.each do |entry|
+          month_entries.each do |entry|
             entry.amount < 0 ? totals["expendings"][month] += entry.amount : totals["earnings"][month] += entry.amount
           end
           totals["total"][month] = totals["earnings"][month] + totals["expendings"][month]
           totals["expendings"][month] = totals["expendings"][month]
-          entries.each_category do |category, elements|
+          month_entries.each_category do |category, elements|
             categories[category] ||= {}
             categories[category][month] = elements.inject(0) {|total, element| total += element.amount}
           end
