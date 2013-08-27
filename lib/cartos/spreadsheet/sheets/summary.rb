@@ -25,9 +25,9 @@ module Cartos
       private
 
         def push_summnary(start_row, type_column, elements)
-          push_months start_row, elements.values.map {|v| v.keys}.flatten.uniq
+          push_months start_row, elements.values.map {|v| v.keys}.flatten.uniq.sort.sort
           elements.each do |element, months|
-            row, column = push_row type_column, element
+            row, _ = push_row type_column, element
             months.each do |month, amount|
               push_month_amount  month, row, amount
             end
