@@ -46,6 +46,11 @@ For exporting your cashbase data to Google you have two choices:
 
 Notice that in both cases you have to especify the year.
 
+
+### Charts
+
+You can use [Cartos-GS](https://github.com/madtrick/cartos-gs) to create charts using the data exported by Cartos. For an example of the charts that you can create check the [example spreadsheet](https://docs.google.com/spreadsheet/ccc?key=0AqwuU2RQe3lzdEt5Rm1qZEp4RnNqOEsyRWJHcUQybnc#gid=19).
+
 ## Contributing
 
 1. Fork it
