@@ -1,3 +1,5 @@
+[![Analytics](https://ga-beacon.appspot.com/UA-46795389-1/cartos/README)](https://github.com/igrigorik/ga-beacon)
+
 # Cartos
 
 This gem allows anyone who's using [cashbase](https://www.cashbasehq.com/) to export all of his data to a Google Spreadsheet. The data on one spreasheet has to belong to one single year. There will be one sheet for each month and one extra sheet summarizing the whole year.
